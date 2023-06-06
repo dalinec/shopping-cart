@@ -1,3 +1,4 @@
+import { useShoppingCart } from '../../context/ShoppingCartContext';
 import formatCurrency from '../../utils/formatCurrency';
 
 type StoreItemProps = {
@@ -7,8 +8,10 @@ type StoreItemProps = {
   bg: string;
 };
 
-const StoreItem = ({ name, price, bg }: StoreItemProps) => {
-  const qty = 0;
+const StoreItem = ({ id, name, price, bg }: StoreItemProps) => {
+  const { getItemQty, increaseCartQty, decreaseCartQty, removeFromCart } =
+    useShoppingCart();
+  const qty = getItemQty(id);
 
   return (
     <div className='rounded-xl shadow-lg h-full '>
@@ -22,23 +25,32 @@ const StoreItem = ({ name, price, bg }: StoreItemProps) => {
         </div>
         <div className='mt-auto'>
           {qty === 0 ? (
-            <button className='p-2 font-semibold rounded-lg bg-blue-600 text-white w-full'>
+            <button
+              onClick={() => increaseCartQty(id)}
+              className='p-2 font-semibold rounded-lg bg-blue-600 text-white w-full'
+            >
               + Add to cart
             </button>
           ) : (
             <div className='flex flex-col items-center gap-2'>
               <div className='flex items-center justify-center gap-2'>
-                <button className='p-2 w-[40px] font-semibold rounded-lg bg-blue-600 text-white'>
+                <button
+                  onClick={() => decreaseCartQty(id)}
+                  className='p-2 w-[40px] font-semibold rounded-lg bg-blue-600 text-white'
+                >
                   -
                 </button>
                 <div>
                   <span className='text-xl'>{qty}</span> in cart
                 </div>
-                <button className='p-2 w-[40px] font-semibold rounded-lg bg-blue-600 text-white'>
+                <button
+                  onClick={() => increaseCartQty(id)}
+                  className='p-2 w-[40px] font-semibold rounded-lg bg-blue-600 text-white'
+                >
                   +
                 </button>
               </div>
-              <button className='p-2 font-semibold rounded-lg bg-red-600 text-white w-1/3'>
+              <button  onClick={() => removeFromCart(id)} className='p-2 font-semibold rounded-lg bg-red-600 text-white w-1/3'>
                 Remove
               </button>
             </div>
