@@ -5,7 +5,7 @@ import { ImCart } from 'react-icons/im';
 const Navbar = () => {
   return (
     <>
-      <div className='sm:text-[12px] px-[20%] lg:text-lg flex gap-12 items-center  font-bold bg-white shadow-md mb-3 p-4'>
+      <div className='sticky sm:text-[12px] px-[20%] lg:text-lg flex gap-12 items-center  font-bold bg-white shadow-md mb-3 p-4'>
         {navLinks.map((item) => (
           <NavLink to={item.link}>
             <div key={item.title}>
