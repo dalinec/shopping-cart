@@ -4,10 +4,10 @@ export default {
   theme: {
     extend: {
       backgroundImage: {
-        bgBanana: "url('/public/imgs/banana.jpg')",
-        bgBook: "url('/public/imgs/book.jpg')",
-        bgCar: "url('/public/imgs/car.jpg')",
-        bgComputer: "url('/public/imgs/computer.jpg')",
+        bgBanana: "url('/imgs/banana.jpg')",
+        bgBook: "url('/imgs/book.jpg')",
+        bgCar: "url('/imgs/car.jpg')",
+        bgComputer: "url('/imgs/computer.jpg')",
       },
     },
   },

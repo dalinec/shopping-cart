@@ -4,12 +4,14 @@ import Store from './pages/Store';
 import About from './pages/About';
 import Navbar from './components/Navbar/Navbar';
 import { ShoppingCartProvider } from './context/ShoppingCartContext';
+import ShoppingCart from './components/ShoppingCart/ShoppingCart';
 
 function App() {
   return (
     <>
       <ShoppingCartProvider>
         <Navbar />
+        <ShoppingCart />
         <div className='mb-4'>
           <Routes>
             <Route path='/' element={<Home />} />

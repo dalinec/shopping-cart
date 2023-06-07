@@ -50,7 +50,10 @@ const StoreItem = ({ id, name, price, bg }: StoreItemProps) => {
                   +
                 </button>
               </div>
-              <button  onClick={() => removeFromCart(id)} className='p-2 font-semibold rounded-lg bg-red-600 text-white w-1/3'>
+              <button
+                onClick={() => removeFromCart(id)}
+                className='p-2 font-semibold rounded-lg bg-red-600 text-white w-1/3'
+              >
                 Remove
               </button>
             </div>
