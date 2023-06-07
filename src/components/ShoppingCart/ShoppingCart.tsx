@@ -11,8 +11,8 @@ const ShoppingCart = () => {
       <div
         className={
           isOpen
-            ? 'fixed right-0 top-0 flex flex-col p-5 w-[30vw] h-screen bg-white shadow-lg text-white ease-in duration-300'
-            : 'fixed right-[-30%] top-0 flex flex-col p-5 w-[30vw] h-screen bg-white shadow-lg text-white ease-in duration-300'
+            ? 'fixed right-0 top-0 flex flex-col p-5 w-full sm:w-[70vw] lg:w-[30vw] h-screen bg-white shadow-lg text-white ease-in duration-300'
+            : 'fixed right-[-100%] sm:right-[-70%] lg:right-[-30%] top-0 flex flex-col p-5 w-full sm:w-[70vw] lg:w-[30vw] h-screen bg-white shadow-lg text-white ease-in duration-300'
         }
       >
         <div className='flex text-black text-3xl'>
